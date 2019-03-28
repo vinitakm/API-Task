@@ -105,7 +105,9 @@ Response
 }
 
 #Delete a Book
+
 #Request
+
 DELETE localhost:8000/api/v1/books/9
 
 Response

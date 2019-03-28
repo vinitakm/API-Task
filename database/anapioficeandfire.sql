@@ -50,7 +50,7 @@ CREATE TABLE `books` (
 INSERT INTO `books` (`id`, `url`, `name`, `isbn`, `authors`, `numberOfPages`, `publiser`, `country`, `mediaType`, `released`, `characters`, `povCharacters`) VALUES
 (1, '', 'A Game of Thrones', '978-0553103540', 'George R. R. Martin', 694, 'Bantam Books', 'United States', '', '2018-08-01', '', ''),
 (2, '', 'My First Book', '123-3213243567', 'John Doe', 350, 'Acme Books', 'United States', '', '2019-08-01', '', ''),
-(3, '', 'A Clash of Kings', '978-0553108033', 'George R. R. Martin', 768, 'Bantam Books', 'United States', 'Hardcover', '1999-02-02', 'https://www.anapioficeandfire.com/api/characters/2', 'https://www.anapioficeandfire.com/api/characters/148'),
+(3, '', 'A Clash of Kings', '978-0553108033', 'George R. R. Martin', 768, 'Bantam Books', 'United States', 'Hardcover', '1999-02-02', 'https://www.anapioficeandfire.com/api/characters/2', 'https://www.anapioficeandfire.com/api/characters/148');
 
 
 --

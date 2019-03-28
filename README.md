@@ -19,7 +19,6 @@ Please run the command "composer install" to install all dependencies.
 # Start Server
 Run the command for starting server: php -S localhost:8080
  
-
 # End Points
 
 Get all Books, Method:GET

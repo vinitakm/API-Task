@@ -50,12 +50,8 @@ CREATE TABLE `books` (
 INSERT INTO `books` (`id`, `url`, `name`, `isbn`, `authors`, `numberOfPages`, `publiser`, `country`, `mediaType`, `released`, `characters`, `povCharacters`) VALUES
 (1, '', 'A Game of Thrones', '978-0553103540', 'George R. R. Martin', 694, 'Bantam Books', 'United States', '', '2018-08-01', '', ''),
 (2, '', 'My First Book', '123-3213243567', 'John Doe', 350, 'Acme Books', 'United States', '', '2019-08-01', '', ''),
-(3, 'XX', 'Joe', '21212', 'Dsd', 500, 'PPP', 'INDIA', 'test', '2019-03-21', 'test', 'test'),
-(4, 'http://google.com/book', 'Carton by joe', '545454545', 'Joe', 250, 'PPPB Ublication', 'India', 'Free Press', '2018-12-02', 'Foo,Bar', 'Hero'),
-(5, 'http://google.com/book', 'Carton', '545454545', 'Joe', 250, 'PPPB Ublication', 'India', 'Social', '2018-12-02', 'Foo,Bar', 'Hero'),
-(7, 'http://google.com/book', 'Carton', '545454545', 'Joe', 250, 'PPPB Ublication', 'India', 'Social', '2018-12-02', 'Foo,Bar', 'Hero'),
-(8, 'http://google.com/book', 'Carton3', '545454545', 'Joe', 250, 'PPPB Ublication', 'India', 'Social', '2018-12-02', 'Foo,Bar', 'Hero'),
-(9, 'http://google.com/book', 'Carton3', '545454545', 'Joe', 250, 'PPPB Ublication', 'India', 'Social', '2018-12-02', 'Foo,Bar', 'Hero');
+(3, '', 'A Clash of Kings', '978-0553108033', 'George R. R. Martin', 768, 'Bantam Books', 'United States', 'Hardcover', '1999-02-02', 'https://www.anapioficeandfire.com/api/characters/2', 'https://www.anapioficeandfire.com/api/characters/148'),
+
 
 --
 -- Indexes for dumped tables

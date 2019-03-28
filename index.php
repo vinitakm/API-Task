@@ -25,7 +25,7 @@ $app = new \Slim\App($container);
 
 $app->group('/api/v1', function (\Slim\App $app) {
 
-	/*To get All Books*/
+	/*To retrieve all Books*/
 	$app->get('/books', function (Request $request, Response $response, array $args) {
 	
 		try{
@@ -56,9 +56,13 @@ $app->group('/api/v1', function (\Slim\App $app) {
 		
 		if(empty($request->getParam('name')))
 			return $response->withJson(array('status_code' => 422,'status' => 'failed','error' =>'The name feild is required.'),422);
+
+		if(empty($request->getParam('isbn')))
+			return $response->withJson(array('status_code' => 422,'status' => 'failed','error' =>'The isbn field is required.'),422);
+
+		if(empty($request->getParam('authors')))
+			return $response->withJson(array('status_code' => 422,'status' => 'failed','error' =>'The authors field is required.'),422);
 		
-
-
 		try{
 			$con = $this->db;
 			$sql = "INSERT INTO `books` (`url`, `name`, `isbn`, `authors`, `numberOfPages`, `publiser`, `country`, `mediaType`, `released`, `characters`, `povCharacters`) VALUES (:url, :name, :isbn, :authors, :numberOfPages, :publiser, :country, :mediaType, :released, :characters, :povCharacters)";
@@ -79,7 +83,7 @@ $app->group('/api/v1', function (\Slim\App $app) {
 			);
 
 			$result = $pre->execute($values);
-			return $response->withJson(array('status_code' => 200,'status' => 'success','message'=>'Book Added'),200);
+			return $response->withJson(array('status_code' => 201,'status' => 'success','message'=>'Book Added'),201);
 
 		} catch(\Exception $ex){
 			return $response->withJson(array('status_code' => 422,'status' => 'failed','error' => $ex->getMessage()),422);
@@ -111,6 +115,18 @@ $app->group('/api/v1', function (\Slim\App $app) {
 
 	/*To update a book*/
 	$app->put('/books/{book_id}', function (Request $request, Response $response, array $args) {
+
+		if(empty($request->getParam('url')))
+			return $response->withJson(array('status_code' => 422,'status' => 'failed','error' =>'The url field is required.'),422);
+		
+		if(empty($request->getParam('name')))
+			return $response->withJson(array('status_code' => 422,'status' => 'failed','error' =>'The name field is required.'),422);
+
+		if(empty($request->getParam('isbn')))
+			return $response->withJson(array('status_code' => 422,'status' => 'failed','error' =>'The isbn field is required.'),422);
+
+		if(empty($request->getParam('authors')))
+			return $response->withJson(array('status_code' => 422,'status' => 'failed','error' =>'The authors field is required.'),422);
 	   
 		try{
 			$id  = $args['book_id'];
@@ -175,7 +191,7 @@ $app->group('/api/v1', function (\Slim\App $app) {
 	       );
 	       $result = $pre->execute($values);
 	       if($result){
-	           return $response->withJson(array('status_code' => 200,'status' => 'success','message'=>''.$result->name.' Book Deleted'),200);
+	           return $response->withJson(array('status_code' => 204,'status' => 'success','message'=>''.$result->name.' Book Deleted'),204);
 	       }else{
 	           return $response->withJson(array('status_code' => 422,'status' => 'failed','message' => 'Book Not Found'),422);
 	       }

@@ -1,7 +1,7 @@
 # Database
 
 First you need to create and setup the database and import the provide file that is inside database folder.
-
+-------------
 # Config File
 
 Check the config file the below mentioned hostname,username,password,database is as per my local configuration so setup like that or update as per your setup.
@@ -11,33 +11,40 @@ $config['db']['password']   = '';
 $config['db']['database_name'] = 'anapioficeandfire';
 
 Now connect your databse.
-
+-----------------
 # Install composer
 Please run the command "composer install" to install all dependencies.
-
-
+-----------------
 # Start Server
 Run the command for starting server: php -S localhost:8080
- 
+-----------------
 # End Points
 
-Get all Books, Method:GET
+Get all Books, 
+Method:GET
 localhost:8080/api/v1/books
 
-Create A Book, Method:POST
+Create A Book, 
+Method:POST
 localhost:8080/api/v1/books
 
-Delete By ID, METHOD:DELETE
+Delete By ID, 
+METHOD:DELETE
 localhost:8000/api/v1/books/11
 
-Update By ID, METHOD:DELETE
+Update By ID, 
+METHOD:DELETE
 localhost:8000/api/v1/books/10 update by id put method
+-------------------------
+
 
 #RESTAPI
-
 #Get list of Books
+
 #Request
+
 GET localhost:8080/api/v1/books
+
 #Response
 {
     "status_code": 200,
@@ -60,8 +67,12 @@ GET localhost:8080/api/v1/books
     ]
 }
 
+------------------
+
 #Get a book by ID
+
 #Request
+
 GET localhost:8000/api/v1/books/1
 
 #Response
@@ -72,9 +83,11 @@ GET localhost:8000/api/v1/books/1
   
     }
 }
-
+---------------
 #Add a Book
+
 #Request
+
 POST localhost:8080/api/v1/books
 
 Params
@@ -93,8 +106,12 @@ povCharacters:Hero
 Response
 {"status_code":200,"status":"success","message":"Book Added"}
 
+--------------------
+
 #Update a Book
+
 #Request
+
 PUT localhost:8000/api/v1/books/1
 
 Response
@@ -103,6 +120,8 @@ Response
     "status": "success",
     "message": "Book Updated"
 }
+
+---------------------
 
 #Delete a Book
 
